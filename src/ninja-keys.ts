@@ -127,6 +127,7 @@ export class NinjaKeys extends LitElement {
     }
     this._selected = undefined;
     this._search = '';
+    this._searchTerms = [];
     this._headerRef.value!.setSearch('');
   }
 
@@ -145,6 +146,9 @@ export class NinjaKeys extends LitElement {
 
   @state()
   private _search = '';
+
+  @state()
+  private _searchTerms = [] as Array<string>;
 
   @state()
   private _currentRoot?: string;
@@ -361,9 +365,9 @@ export class NinjaKeys extends LitElement {
     };
 
     const actionMatches = this._flatData.filter((action) => {
-      const regex = new RegExp(this._search, 'gi');
-      const matcher =
-        action.title.match(regex) || action.keywords?.match(regex);
+      const searchBase = `${action.section} ${action.title} ${action.keywords}`;
+      // check if all fragments of the search are included in the action details
+      const matcher = this._searchTerms.every(term => searchBase.toLowerCase().includes(term));
 
       if (!this._currentRoot && this._search) {
         // global search for items on root
@@ -462,6 +466,7 @@ export class NinjaKeys extends LitElement {
     if (action.children && action.children?.length > 0) {
       this._currentRoot = action.id;
       this._search = '';
+      this._searchTerms = [];
     }
 
     this._headerRef.value!.setSearch('');
@@ -479,6 +484,7 @@ export class NinjaKeys extends LitElement {
 
   private async _handleInput(event: CustomEvent<{search: string}>) {
     this._search = event.detail.search;
+    this._searchTerms = this._search.split(' ');
     await this.updateComplete;
     this.dispatchEvent(
       new CustomEvent('change', {
