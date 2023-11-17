@@ -91,7 +91,6 @@ export const baseStyles = css`
     -webkit-box-flex: 1;
     flex-grow: 1;
     min-width: 0px;
-    will-change: transform;
     background: var(--ninja-modal-background);
     border-radius: 0.5em;
     box-shadow: var(--ninja-modal-shadow);
