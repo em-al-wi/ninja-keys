@@ -1,5 +1,25 @@
 # Ninja Keys
 
+This repo is a fork of the beautiful work of Serhii Slieptsov - <https://github.com/ssleptsov/ninja-keys>.
+With some minor adjustments.
+
+## Differences to the orinigal implementation
+
+### Term based search
+
+Instead of RegEx, we are checking if every fragment of the search is contained in the action's section, title or keywords.
+Meaning, you can search for "sea pro" to find the action called "Search project...".
+
+### Subtitle for actions
+
+It is possible to specify the attribute "subtitle" on an action. The value will appear as "title" attribute on the action.
+
+### CSS - removed will-change
+
+Due to the blurry font, we removed the "will-change: transform" css on the modal contents.
+
+## -- Orinial README --
+
 Keyboard shortcut interface for your website that works with Vanilla JS, Vue, and React.
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fssleptsov%2Fninja-keys.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fssleptsov%2Fninja-keys?ref=badge_shield)
