@@ -14,9 +14,18 @@ Meaning, you can search for "sea pro" to find the action called "Search project.
 
 It is possible to specify the attribute "subtitle" on an action. The value will appear as "title" attribute on the action.
 
-### CSS - removed will-change
+### CSS - removed "will-change"
 
 Due to the blurry font, we removed the "will-change: transform" css on the modal contents.
+See also <https://github.com/ssleptsov/ninja-keys/issues/19>.
+
+### Footer configuration
+
+It is possible to show/hide the footer and change the labels used in hte footer.
+
+```html
+<ninja-keys ... showFooter="false" toSelect="selection" toClose="..." toNavigate="..." moveToParent="..."></ninja-keys>
+```
 
 ## -- Orinial README --
 
