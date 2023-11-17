@@ -3,7 +3,7 @@
 This repo is a fork of the beautiful work of Serhii Slieptsov - <https://github.com/ssleptsov/ninja-keys>.
 With some minor adjustments.
 
-## Differences to the orinigal implementation
+## Differences to the original implementation
 
 ### Term based search
 
