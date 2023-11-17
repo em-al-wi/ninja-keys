@@ -1,6 +1,56 @@
-import {html} from 'lit';
+import {LitElement, html, css } from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
-export const footerHtml = html` <div class="modal-footer" slot="footer">
+@customElement('ninja-footer')
+export class NinjaFooter extends LitElement {
+  static override styles = css`
+    .modal-footer {
+    background: var(--ninja-footer-background);
+    padding: 0.5em 1em;
+    display: flex;
+    /* font-size: 0.75em; */
+    border-top: var(--ninja-separate-border);
+    color: var(--ninja-secondary-text-color);
+  }
+
+  .modal-footer .help {
+    display: flex;
+    margin-right: 1em;
+    align-items: center;
+    font-size: 0.75em;
+  }
+
+  .ninja-examplekey {
+    background: var(--ninja-secondary-background-color);
+    padding: 0.06em 0.25em;
+    border-radius: var(--ninja-key-border-radius);
+    color: var(--ninja-secondary-text-color);
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    font-size: 1.25em;
+    fill: currentColor;
+  }
+  .ninja-examplekey.esc {
+    width: auto;
+    height: auto;
+    font-size: 1.1em;
+  }
+  .ninja-examplekey.backspace {
+    opacity: 0.7;
+  }
+  `;
+
+  @property() toSelect = '';
+  @property() toNavigate = '';
+  @property() toClose = '';
+  @property() moveToParent = '';
+  
+
+  override render() {
+    
+    return html`
+      <div class="modal-footer" slot="footer">
   <span class="help">
     <svg
       version="1.0"
@@ -13,7 +63,7 @@ export const footerHtml = html` <div class="modal-footer" slot="footer">
       />
     </svg>
 
-    to select
+    ${this.toSelect}
   </span>
   <span class="help">
     <svg
@@ -34,11 +84,11 @@ export const footerHtml = html` <div class="modal-footer" slot="footer">
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
     </svg>
-    to navigate
+    ${this.toNavigate}
   </span>
   <span class="help">
     <span class="ninja-examplekey esc">esc</span>
-    to close
+    ${this.toClose}
   </span>
   <span class="help">
     <svg
@@ -53,6 +103,17 @@ export const footerHtml = html` <div class="modal-footer" slot="footer">
         clip-rule="evenodd"
       />
     </svg>
-    move to parent
+    ${this.moveToParent}
   </span>
-</div>`;
+</div>
+    `;
+  }
+
+
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'ninja-footer': NinjaFooter;
+  }
+}

@@ -144,40 +144,4 @@ export const baseStyles = css`
     color: var(--ninja-group-text-color);
     margin: 1px 0;
   }
-
-  .modal-footer {
-    background: var(--ninja-footer-background);
-    padding: 0.5em 1em;
-    display: flex;
-    /* font-size: 0.75em; */
-    border-top: var(--ninja-separate-border);
-    color: var(--ninja-secondary-text-color);
-  }
-
-  .modal-footer .help {
-    display: flex;
-    margin-right: 1em;
-    align-items: center;
-    font-size: 0.75em;
-  }
-
-  .ninja-examplekey {
-    background: var(--ninja-secondary-background-color);
-    padding: 0.06em 0.25em;
-    border-radius: var(--ninja-key-border-radius);
-    color: var(--ninja-secondary-text-color);
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
-    font-size: 1.25em;
-    fill: currentColor;
-  }
-  .ninja-examplekey.esc {
-    width: auto;
-    height: auto;
-    font-size: 1.1em;
-  }
-  .ninja-examplekey.backspace {
-    opacity: 0.7;
-  }
 `;

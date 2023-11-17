@@ -8,10 +8,10 @@ import hotkeys from 'hotkeys-js';
 
 import './ninja-header.js';
 import './ninja-action.js';
+import './ninja-footer.js';
 import {INinjaAction} from './interfaces/ininja-action.js';
 import {NinjaHeader} from './ninja-header.js';
 import {NinjaAction} from './ninja-action.js';
-import {footerHtml} from './ninja-footer.js';
 import {baseStyles} from './base-styles.js';
 
 @customElement('ninja-keys')
@@ -74,6 +74,31 @@ export class NinjaKeys extends LitElement {
    * Set this attribute to prevent load default icons font
    */
   @property({type: Boolean}) noAutoLoadMdIcons = false;
+
+  /**
+   * Show or hide the footer
+   */
+  @property({type: Boolean}) showFooter = true;
+
+  /** 
+   * label for "to select" in the footer
+   */
+  @property() toSelect = 'to select';
+
+  /** 
+   * label for "to navigate" in the footer
+   */
+  @property() toNavigate = 'to navigate';  
+
+  /** 
+   * label for "to close" in the footer
+   */
+  @property() toClose = 'to close';  
+
+  /** 
+   * label for "move to parent" in the footer
+   */
+  @property() moveToParent = 'move to parent';
 
   /**
    * Array of actions
@@ -417,6 +442,15 @@ export class NinjaKeys extends LitElement {
       itemTemplates.push(html`${header}${actionsList(actions)}`);
     });
 
+    let footerHtml;
+    if(this.showFooter) {
+      footerHtml = html`
+        <slot name="footer"> 
+          <ninja-footer toSelect=${this.toSelect} toClose=${this.toClose} toNavigate=${this.toNavigate} moveToParent=${this.moveToParent}></ninja-footer> 
+        </slot>
+      `
+    }
+
     return html`
       <div @click=${this._overlayClick} class=${classMap(menuClasses)}>
         <div class=${classMap(classes)} @animationend=${this._onTransitionEnd}>
@@ -435,7 +469,7 @@ export class NinjaKeys extends LitElement {
           <div class="modal-body">
             <div class="actions-list" part="actions-list">${itemTemplates}</div>
           </div>
-          <slot name="footer"> ${footerHtml} </slot>
+          ${footerHtml}
         </div>
       </div>
     `;
