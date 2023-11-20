@@ -1,6 +1,6 @@
 {
-  "name": "ninja-keys",
-  "version": "1.2.2",
+  "name": "@em-al-wi/ninja-keys",
+  "version": "1.2.3",
   "description": "Ninja Keys",
   "main": "dist/ninja-keys.js",
   "module": "dist/ninja-keys.js",
@@ -8,6 +8,9 @@
   "exports": {
     ".": "./dist/ninja-keys.js",
     "./ninja-header": "./dist/ninja-header.js"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "start": "npm run build && concurrently -k -r  \"npm run serve\" \"npm run build:watch\"",
@@ -44,10 +47,10 @@
   ],
   "author": "Serhii Slieptsov <hey@sergei.ws>",
   "license": "MIT",
-  "homepage": "https://github.com/ssleptsov/ninja-keys",
+  "homepage": "https://github.com/em-al-wi/ninja-keys",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ssleptsov/ninja-keys.git"
+    "url": "git@github.com:em-al-wi/ninja-keys.git"
   },
   "clean-publish": {
     "files": [
