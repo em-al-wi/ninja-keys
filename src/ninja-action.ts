@@ -4,7 +4,6 @@ import {classMap} from 'lit/directives/class-map.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {join} from 'lit/directives/join.js';
 	import {ifDefined} from 'lit/directives/if-defined.js';
-import '@material/mwc-icon';
 
 import {INinjaAction} from './interfaces/ininja-action.js';
 
@@ -124,14 +123,7 @@ export class NinjaAction extends LitElement {
   }
 
   override render() {
-    let icon;
-    if (this.action.mdIcon) {
-      icon = html`<mwc-icon part="ninja-icon" class="ninja-icon"
-        >${this.action.mdIcon}</mwc-icon
-      >`;
-    } else if (this.action.icon) {
-      icon = unsafeHTML(this.action.icon || '');
-    }
+    let icon = unsafeHTML(this.action.icon || '');
 
     // const hotkey = this.action.hotkey
     //   ? html`<div class="ninja-hotkey">${this.action.hotkey}</div>`

@@ -69,13 +69,6 @@ export class NinjaKeys extends LitElement {
   @property({type: Boolean}) hotKeysJoinedView = false;
 
   /**
-   * Disable load material icons font on connect
-   * If you use custom icons.
-   * Set this attribute to prevent load default icons font
-   */
-  @property({type: Boolean}) noAutoLoadMdIcons = false;
-
-  /**
    * Show or hide the footer
    */
   @property({type: Boolean}) showFooter = true;
@@ -205,11 +198,6 @@ export class NinjaKeys extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback();
-
-    if (!this.noAutoLoadMdIcons) {
-      document.fonts.load('24px Material Icons', 'apps').then(() => {});
-    }
-
     this._registerInternalHotkeys();
   }
 

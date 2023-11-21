@@ -27,7 +27,12 @@ It is possible to show/hide the footer and change the labels used in hte footer.
 <ninja-keys ... showFooter="false" toSelect="selection" toClose="..." toNavigate="..." moveToParent="..."></ninja-keys>
 ```
 
-## -- Orinial README --
+### Removed material design icons
+
+mdIcon has been removed since we don't use it.
+
+
+## -- Original README --
 
 Keyboard shortcut interface for your website that works with Vanilla JS, Vue, and React.
 
@@ -180,11 +185,10 @@ Library using flat data structure inside, as in the example above. But you can a
 | openHotkey           | cmd+k,ctrl+k                | Open or close shortcut                                      |
 | navigationUpHotkey   | up,shift+tab                | Navigation up shortcuts                                     |
 | navigationDownHotkey | down,tab                    | Navigation down shortcuts                                   |
-| closeHotkey          | esc                         | Close shortcut                                               |
+| closeHotkey          | esc                         | Close shortcut                                              |
 | goBackHotkey         | backspace                   | Go back on one level if has parent menu                     |
 | selectHotkey         | enter                       | Select action and execute handler or open submenu           |
 | hotKeysJoinedView    | false                       | If exist/true will display hotkeys inside one element       |
-| noAutoLoadMdIcons    | false                       | If exist it disable load material icons font on connect     |
 #### Example
 ```html
 <ninja-keys placeholder="Must app is awesome" openHotkey="cmd+l" hideBreadcrumbs></ninja-keys>
@@ -198,12 +202,12 @@ Array of `INinjaAction` - interface properties below
 | title    | string                  | Title of action                                                                        |
 | hotkey   | string(optional)        | Shortcut to display and register                                                       |
 | handler  | Function(optional)      | Function to execute on select                                                          |
-| mdIcon   | string(optional)        | Material Design font icon name                                                         |
 | icon     | string(optional)        | Html to render as custom icon                                                          |
 | parent   | string(optional)        | If using flat structure use id of actions to make a multilevel menu                    |
 | keywords | string(optional)        | Keywords to use for search                                                             |
 | children | Array<string>(optional) | If using flat structure then ids of child menu actions. Not required on tree structure |
 | section  | string(optional)        | Section text. Like a header will be group with other same sections                     |
+| subtitle | string(optional)        | ptional title attribute of the action title                                            |
 
 ## Methods
 | Name      | Arg                 | Description                                         |

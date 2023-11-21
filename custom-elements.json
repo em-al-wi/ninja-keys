@@ -441,16 +441,6 @@
             },
             {
               "kind": "field",
-              "name": "noAutoLoadMdIcons",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Disable load material icons font on connect\nIf you use custom icons.\nSet this attribute to prevent load default icons font",
-              "attribute": "noAutoLoadMdIcons"
-            },
-            {
-              "kind": "field",
               "name": "data",
               "default": "[]",
               "description": "Array of actions",
@@ -768,15 +758,6 @@
               "default": "false",
               "description": "Show or hide breadcrumbs on header",
               "fieldName": "hotKeysJoinedView"
-            },
-            {
-              "name": "noAutoLoadMdIcons",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Disable load material icons font on connect\nIf you use custom icons.\nSet this attribute to prevent load default icons font",
-              "fieldName": "noAutoLoadMdIcons"
             },
             {
               "name": "data",
