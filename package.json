@@ -1,12 +1,13 @@
 {
   "name": "@em-al-wi/ninja-keys",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Ninja Keys",
-  "main": "dist/ninja-keys.js",
-  "module": "dist/ninja-keys.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "type": "module",
   "exports": {
-    ".": "./dist/ninja-keys.js",
+    ".": "./dist/index.js",
+    "./ninja-keys": "./dist/ninja-keys.js",
     "./ninja-header": "./dist/ninja-header.js"
   },
   "publishConfig": {
