@@ -380,7 +380,7 @@ export class NinjaKeys extends LitElement {
     const actionMatches = this._flatData.filter((action) => {
       const searchBase = `${action.section} ${action.title} ${action.keywords}`;
       // check if all fragments of the search are included in the action details
-      const matcher = this._searchTerms.every(term => searchBase.toLowerCase().includes(term));
+      const matcher = this._searchTerms.every(term => searchBase.toLowerCase().includes(term?.toLowerCase()));
 
       if (!this._currentRoot && this._search) {
         // global search for items on root
