@@ -31,6 +31,10 @@ It is possible to show/hide the footer and change the labels used in hte footer.
 
 mdIcon has been removed since we don't use it.
 
+### Hidden actions
+
+Added "hidden" as action attribute to hide an action from the list.
+
 
 ## -- Original README --
 
