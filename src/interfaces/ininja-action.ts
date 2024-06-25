@@ -48,4 +48,9 @@ export interface INinjaAction {
    * Optional title attribute of the action title
    */
   subtitle?: string;
+
+  /**
+   * Possibility to hide an action from the list
+   */
+  hidden?: boolean;
 }

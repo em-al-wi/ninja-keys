@@ -3,7 +3,7 @@ import {customElement, property} from 'lit/decorators.js';
 import {classMap} from 'lit/directives/class-map.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {join} from 'lit/directives/join.js';
-	import {ifDefined} from 'lit/directives/if-defined.js';
+import {ifDefined} from 'lit/directives/if-defined.js';
 
 import {INinjaAction} from './interfaces/ininja-action.js';
 
@@ -30,6 +30,9 @@ export class NinjaAction extends LitElement {
       background-color: var(--ninja-selected-background);
       border-left: 2px solid var(--ninja-accent-color);
       outline: none;
+    }
+    .ninja-hidden {
+      display: none;
     }
     .ninja-action.selected .ninja-icon {
       color: var(--ninja-selected-text-color);
@@ -161,11 +164,16 @@ export class NinjaAction extends LitElement {
     return html`
       <div
         class="ninja-action"
-        part="ninja-action ${this.selected ? 'ninja-selected' : ''}"
+        part="ninja-action ${this.selected ? 'ninja-selected' : ''}  ${this
+          .hidden
+          ? 'ninja-hidden'
+          : ''}"
         class=${classMap(classes)}
       >
         ${icon}
-        <div class="ninja-title" title="${ifDefined(this.action.subtitle)}">${this.action.title}</div>
+        <div class="ninja-title" title="${ifDefined(this.action.subtitle)}">
+          ${this.action.title}
+        </div>
         ${hotkey}
       </div>
     `;
