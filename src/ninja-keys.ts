@@ -73,25 +73,20 @@ export class NinjaKeys extends LitElement {
    */
   @property({type: Boolean}) showFooter = true;
 
-  /** 
+  /**
    * label for "to select" in the footer
    */
   @property() toSelect = 'to select';
 
-  /** 
+  /**
    * label for "to navigate" in the footer
    */
-  @property() toNavigate = 'to navigate';  
+  @property() toNavigate = 'to navigate';
 
-  /** 
+  /**
    * label for "to close" in the footer
    */
-  @property() toClose = 'to close';  
-
-  /** 
-   * label for "move to parent" in the footer
-   */
-  @property() moveToParent = 'move to parent';
+  @property() toClose = 'to close';
 
   /**
    * Array of actions
@@ -321,30 +316,29 @@ export class NinjaKeys extends LitElement {
 
   private _unregisterInternalHotkeys() {
     if (this.openHotkey) {
-      hotkeys.unbind(this.openHotkey)
+      hotkeys.unbind(this.openHotkey);
     }
 
     if (this.selectHotkey) {
-      hotkeys.unbind(this.selectHotkey)
+      hotkeys.unbind(this.selectHotkey);
     }
 
     if (this.goBackHotkey) {
-      hotkeys.unbind(this.goBackHotkey)
+      hotkeys.unbind(this.goBackHotkey);
     }
 
     if (this.navigationDownHotkey) {
-      hotkeys.unbind(this.navigationDownHotkey)
+      hotkeys.unbind(this.navigationDownHotkey);
     }
 
     if (this.navigationUpHotkey) {
-      hotkeys.unbind(this.navigationUpHotkey)
+      hotkeys.unbind(this.navigationUpHotkey);
     }
 
     if (this.closeHotkey) {
-      hotkeys.unbind(this.closeHotkey)
+      hotkeys.unbind(this.closeHotkey);
     }
   }
-
 
   private _actionFocused(index: INinjaAction, $event: MouseEvent) {
     // this.selectedIndex = index;
@@ -380,7 +374,9 @@ export class NinjaKeys extends LitElement {
     const actionMatches = this._flatData.filter((action) => {
       const searchBase = `${action.section} ${action.title} ${action.keywords}`;
       // check if all fragments of the search are included in the action details
-      const matcher = this._searchTerms.every(term => searchBase.toLowerCase().includes(term?.toLowerCase()));
+      const matcher = this._searchTerms.every((term) =>
+        searchBase.toLowerCase().includes(term?.toLowerCase())
+      );
 
       if (!this._currentRoot && this._search) {
         // global search for items on root
@@ -431,12 +427,16 @@ export class NinjaKeys extends LitElement {
     });
 
     let footerHtml;
-    if(this.showFooter) {
+    if (this.showFooter) {
       footerHtml = html`
-        <slot name="footer"> 
-          <ninja-footer toSelect=${this.toSelect} toClose=${this.toClose} toNavigate=${this.toNavigate} moveToParent=${this.moveToParent}></ninja-footer> 
+        <slot name="footer">
+          <ninja-footer
+            toSelect=${this.toSelect}
+            toClose=${this.toClose}
+            toNavigate=${this.toNavigate}
+          ></ninja-footer>
         </slot>
-      `
+      `;
     }
 
     return html`

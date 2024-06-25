@@ -24,7 +24,7 @@ See also <https://github.com/ssleptsov/ninja-keys/issues/19>.
 It is possible to show/hide the footer and change the labels used in hte footer.
 
 ```html
-<ninja-keys ... showFooter="false" toSelect="selection" toClose="..." toNavigate="..." moveToParent="..."></ninja-keys>
+<ninja-keys ... showFooter="false" toSelect="selection" toClose="..." toNavigate="..."></ninja-keys>
 ```
 
 ### Removed material design icons
