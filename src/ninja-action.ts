@@ -156,18 +156,18 @@ export class NinjaAction extends LitElement {
       }
     }
 
+    const isSelected = this.selected && !this.action.hidden;
+
     const classes = {
-      selected: this.selected,
+      selected: isSelected,
       'ninja-action': true,
+      'ninja-hidden': !!this.action.hidden,
     };
 
     return html`
       <div
         class="ninja-action"
-        part="ninja-action ${this.selected ? 'ninja-selected' : ''}  ${this
-          .action.hidden
-          ? 'ninja-hidden'
-          : ''}"
+        part="ninja-action ${isSelected ? 'ninja-selected' : ''}"
         class=${classMap(classes)}
       >
         ${icon}
