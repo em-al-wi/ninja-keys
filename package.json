@@ -1,6 +1,6 @@
 {
   "name": "@em-al-wi/ninja-keys",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Ninja Keys",
   "main": "dist/index.js",
   "module": "dist/index.js",
