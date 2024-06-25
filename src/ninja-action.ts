@@ -165,7 +165,7 @@ export class NinjaAction extends LitElement {
       <div
         class="ninja-action"
         part="ninja-action ${this.selected ? 'ninja-selected' : ''}  ${this
-          .hidden
+          .action.hidden
           ? 'ninja-hidden'
           : ''}"
         class=${classMap(classes)}
