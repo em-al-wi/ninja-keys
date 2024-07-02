@@ -9,7 +9,7 @@
         {
           "kind": "variable",
           "name": "baseStyles",
-          "default": "css`\n  :host {\n    --ninja-width: 640px;\n    --ninja-backdrop-filter: none;\n    --ninja-overflow-background: rgba(255, 255, 255, 0.5);\n    --ninja-text-color: rgb(60, 65, 73);\n    --ninja-font-size: 16px;\n    --ninja-top: 20%;\n\n    --ninja-key-border-radius: 0.25em;\n    --ninja-accent-color: rgb(110, 94, 210);\n    --ninja-secondary-background-color: rgb(239, 241, 244);\n    --ninja-secondary-text-color: rgb(107, 111, 118);\n\n    --ninja-selected-background: rgb(248, 249, 251);\n\n    --ninja-icon-color: var(--ninja-secondary-text-color);\n    --ninja-icon-size: 1.2em;\n    --ninja-separate-border: 1px solid var(--ninja-secondary-background-color);\n\n    --ninja-modal-background: #fff;\n    --ninja-modal-shadow: rgb(0 0 0 / 50%) 0px 16px 70px;\n\n    --ninja-actions-height: 300px;\n    --ninja-group-text-color: rgb(144, 149, 157);\n\n    --ninja-footer-background: rgba(242, 242, 242, 0.4);\n\n    font-size: var(--ninja-font-size);\n  }\n\n  :host(.dark) {\n    --ninja-backdrop-filter: none;\n    --ninja-overflow-background: rgba(0, 0, 0, 0.7);\n    --ninja-text-color: #7d7d7d;\n\n    --ninja-modal-background: rgba(17, 17, 17, 0.85);\n    --ninja-accent-color: rgb(110, 94, 210);\n    --ninja-secondary-background-color: rgba(51, 51, 51, 0.44);\n    --ninja-secondary-text-color: #888;\n\n    --ninja-selected-text-color: #eaeaea;\n    --ninja-selected-background: rgba(51, 51, 51, 0.44);\n\n    --ninja-icon-color: var(--ninja-secondary-text-color);\n    --ninja-separate-border: 1px solid var(--ninja-secondary-background-color);\n\n    --ninja-modal-shadow: 0 16px 70px rgba(0, 0, 0, 0.2);\n\n    --ninja-group-text-color: rgb(144, 149, 157);\n\n    --ninja-footer-background: rgba(30, 30, 30, 85%);\n  }\n\n  .modal {\n    display: none;\n    position: fixed;\n    z-index: 1;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    overflow: auto;\n    background: var(--ninja-overflow-background);\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    backdrop-filter: var(--ninja-backdrop-filter);\n    text-align: left;\n    color: var(--ninja-text-color);\n    font-family: var(--ninja-font-family);\n  }\n  .modal.visible {\n    display: block;\n  }\n\n  .modal-content {\n    position: relative;\n    top: var(--ninja-top);\n    margin: auto;\n    padding: 0;\n    display: flex;\n    flex-direction: column;\n    flex-shrink: 1;\n    -webkit-box-flex: 1;\n    flex-grow: 1;\n    min-width: 0px;\n    will-change: transform;\n    background: var(--ninja-modal-background);\n    border-radius: 0.5em;\n    box-shadow: var(--ninja-modal-shadow);\n    max-width: var(--ninja-width);\n    overflow: hidden;\n  }\n\n  .bump {\n    animation: zoom-in-zoom-out 0.2s ease;\n  }\n\n  @keyframes zoom-in-zoom-out {\n    0% {\n      transform: scale(0.99);\n    }\n    50% {\n      transform: scale(1.01, 1.01);\n    }\n    100% {\n      transform: scale(1, 1);\n    }\n  }\n\n  .ninja-github {\n    color: var(--ninja-keys-text-color);\n    font-weight: normal;\n    text-decoration: none;\n  }\n\n  .actions-list {\n    max-height: var(--ninja-actions-height);\n    overflow: auto;\n    scroll-behavior: smooth;\n    position: relative;\n    margin: 0;\n    padding: 0.5em 0;\n    list-style: none;\n    scroll-behavior: smooth;\n  }\n\n  .group-header {\n    height: 1.375em;\n    line-height: 1.375em;\n    padding-left: 1.25em;\n    padding-top: 0.5em;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    overflow: hidden;\n    font-size: 0.75em;\n    line-height: 1em;\n    color: var(--ninja-group-text-color);\n    margin: 1px 0;\n  }\n\n  .modal-footer {\n    background: var(--ninja-footer-background);\n    padding: 0.5em 1em;\n    display: flex;\n    /* font-size: 0.75em; */\n    border-top: var(--ninja-separate-border);\n    color: var(--ninja-secondary-text-color);\n  }\n\n  .modal-footer .help {\n    display: flex;\n    margin-right: 1em;\n    align-items: center;\n    font-size: 0.75em;\n  }\n\n  .ninja-examplekey {\n    background: var(--ninja-secondary-background-color);\n    padding: 0.06em 0.25em;\n    border-radius: var(--ninja-key-border-radius);\n    color: var(--ninja-secondary-text-color);\n    width: 1em;\n    height: 1em;\n    margin-right: 0.5em;\n    font-size: 1.25em;\n    fill: currentColor;\n  }\n  .ninja-examplekey.esc {\n    width: auto;\n    height: auto;\n    font-size: 1.1em;\n  }\n  .ninja-examplekey.backspace {\n    opacity: 0.7;\n  }\n`"
+          "default": "css` :host { --ninja-width: 640px; --ninja-backdrop-filter: none; --ninja-overflow-background: rgba(255, 255, 255, 0.5); --ninja-text-color: rgb(60, 65, 73); --ninja-font-size: 16px; --ninja-top: 20%; --ninja-key-border-radius: 0.25em; --ninja-accent-color: rgb(110, 94, 210); --ninja-secondary-background-color: rgb(239, 241, 244); --ninja-secondary-text-color: rgb(107, 111, 118); --ninja-selected-background: rgb(248, 249, 251); --ninja-icon-color: var(--ninja-secondary-text-color); --ninja-icon-size: 1.2em; --ninja-separate-border: 1px solid var(--ninja-secondary-background-color); --ninja-modal-background: #fff; --ninja-modal-shadow: rgb(0 0 0 / 50%) 0px 16px 70px; --ninja-actions-height: 300px; --ninja-group-text-color: rgb(144, 149, 157); --ninja-footer-background: rgba(242, 242, 242, 0.4); --ninja-placeholder-color: #8e8e8e; font-size: var(--ninja-font-size); --ninja-z-index: 1; } :host(.dark) { --ninja-backdrop-filter: none; --ninja-overflow-background: rgba(0, 0, 0, 0.7); --ninja-text-color: #7d7d7d; --ninja-modal-background: rgba(17, 17, 17, 0.85); --ninja-accent-color: rgb(110, 94, 210); --ninja-secondary-background-color: rgba(51, 51, 51, 0.44); --ninja-secondary-text-color: #888; --ninja-selected-text-color: #eaeaea; --ninja-selected-background: rgba(51, 51, 51, 0.44); --ninja-icon-color: var(--ninja-secondary-text-color); --ninja-separate-border: 1px solid var(--ninja-secondary-background-color); --ninja-modal-shadow: 0 16px 70px rgba(0, 0, 0, 0.2); --ninja-group-text-color: rgb(144, 149, 157); --ninja-footer-background: rgba(30, 30, 30, 85%); } .modal { display: none; position: fixed; z-index: var(--ninja-z-index); left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background: var(--ninja-overflow-background); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-backdrop-filter: var(--ninja-backdrop-filter); backdrop-filter: var(--ninja-backdrop-filter); text-align: left; color: var(--ninja-text-color); font-family: var(--ninja-font-family); } .modal.visible { display: block; } .modal-content { position: relative; top: var(--ninja-top); margin: auto; padding: 0; display: flex; flex-direction: column; flex-shrink: 1; -webkit-box-flex: 1; flex-grow: 1; min-width: 0px; background: var(--ninja-modal-background); border-radius: 0.5em; box-shadow: var(--ninja-modal-shadow); max-width: var(--ninja-width); overflow: hidden; } .bump { animation: zoom-in-zoom-out 0.2s ease; } @keyframes zoom-in-zoom-out { 0% { transform: scale(0.99); } 50% { transform: scale(1.01, 1.01); } 100% { transform: scale(1, 1); } } .ninja-github { color: var(--ninja-keys-text-color); font-weight: normal; text-decoration: none; } .actions-list { max-height: var(--ninja-actions-height); overflow: auto; scroll-behavior: smooth; position: relative; margin: 0; padding: 0.5em 0; list-style: none; scroll-behavior: smooth; } .group-header { height: 1.375em; line-height: 1.375em; padding-left: 1.25em; padding-top: 0.5em; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-size: 0.75em; line-height: 1em; color: var(--ninja-group-text-color); margin: 1px 0; } `"
         }
       ],
       "exports": [
@@ -19,6 +19,29 @@
           "declaration": {
             "name": "baseStyles",
             "module": "src/base-styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NinjaKeys",
+          "declaration": {
+            "name": "NinjaKeys",
+            "module": "\"./ninja-keys\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "INinjaAction",
+          "declaration": {
+            "name": "INinjaAction",
+            "module": "./interfaces/ininja-action"
           }
         }
       ]
@@ -55,7 +78,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
+              "default": "true",
               "description": "Display hotkey as separate buttons on UI or as is",
               "attribute": "hotKeysJoinedView"
             },
@@ -98,7 +121,7 @@
               "type": {
                 "text": "boolean"
               },
-              "default": "false",
+              "default": "true",
               "description": "Display hotkey as separate buttons on UI or as is",
               "fieldName": "hotKeysJoinedView"
             }
@@ -135,17 +158,86 @@
       "path": "src/ninja-footer.ts",
       "declarations": [
         {
-          "kind": "variable",
-          "name": "footerHtml",
-          "default": "html` <div class=\"modal-footer\" slot=\"footer\">\n  <span class=\"help\">\n    <svg\n      version=\"1.0\"\n      class=\"ninja-examplekey\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      viewBox=\"0 0 1280 1280\"\n    >\n      <path\n        d=\"M1013 376c0 73.4-.4 113.3-1.1 120.2a159.9 159.9 0 0 1-90.2 127.3c-20 9.6-36.7 14-59.2 15.5-7.1.5-121.9.9-255 1h-242l95.5-95.5 95.5-95.5-38.3-38.2-38.2-38.3-160 160c-88 88-160 160.4-160 161 0 .6 72 73 160 161l160 160 38.2-38.3 38.3-38.2-95.5-95.5-95.5-95.5h251.1c252.9 0 259.8-.1 281.4-3.6 72.1-11.8 136.9-54.1 178.5-116.4 8.6-12.9 22.6-40.5 28-55.4 4.4-12 10.7-36.1 13.1-50.6 1.6-9.6 1.8-21 2.1-132.8l.4-122.2H1013v110z\"\n      />\n    </svg>\n\n    to select\n  </span>\n  <span class=\"help\">\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      class=\"ninja-examplekey\"\n      viewBox=\"0 0 24 24\"\n    >\n      <path d=\"M0 0h24v24H0V0z\" fill=\"none\" />\n      <path\n        d=\"M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z\"\n      />\n    </svg>\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      class=\"ninja-examplekey\"\n      viewBox=\"0 0 24 24\"\n    >\n      <path d=\"M0 0h24v24H0V0z\" fill=\"none\" />\n      <path d=\"M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z\" />\n    </svg>\n    to navigate\n  </span>\n  <span class=\"help\">\n    <span class=\"ninja-examplekey esc\">esc</span>\n    to close\n  </span>\n  <span class=\"help\">\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      class=\"ninja-examplekey backspace\"\n      viewBox=\"0 0 20 20\"\n      fill=\"currentColor\"\n    >\n      <path\n        fill-rule=\"evenodd\"\n        d=\"M6.707 4.879A3 3 0 018.828 4H15a3 3 0 013 3v6a3 3 0 01-3 3H8.828a3 3 0 01-2.12-.879l-4.415-4.414a1 1 0 010-1.414l4.414-4.414zm4 2.414a1 1 0 00-1.414 1.414L10.586 10l-1.293 1.293a1 1 0 101.414 1.414L12 11.414l1.293 1.293a1 1 0 001.414-1.414L13.414 10l1.293-1.293a1 1 0 00-1.414-1.414L12 8.586l-1.293-1.293z\"\n        clip-rule=\"evenodd\"\n      />\n    </svg>\n    move to parent\n  </span>\n</div>`"
+          "kind": "class",
+          "description": "",
+          "name": "NinjaFooter",
+          "members": [
+            {
+              "kind": "field",
+              "name": "toSelect",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "toSelect"
+            },
+            {
+              "kind": "field",
+              "name": "toNavigate",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "toNavigate"
+            },
+            {
+              "kind": "field",
+              "name": "toClose",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "toClose"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "toSelect",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "toSelect"
+            },
+            {
+              "name": "toNavigate",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "toNavigate"
+            },
+            {
+              "name": "toClose",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "toClose"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "ninja-footer",
+          "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "footerHtml",
+          "name": "NinjaFooter",
           "declaration": {
-            "name": "footerHtml",
+            "name": "NinjaFooter",
+            "module": "src/ninja-footer.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "ninja-footer",
+          "declaration": {
+            "name": "NinjaFooter",
             "module": "src/ninja-footer.ts"
           }
         }
@@ -441,6 +533,46 @@
             },
             {
               "kind": "field",
+              "name": "showFooter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "Show or hide the footer",
+              "attribute": "showFooter"
+            },
+            {
+              "kind": "field",
+              "name": "toSelect",
+              "type": {
+                "text": "string"
+              },
+              "default": "'to select'",
+              "description": "label for \"to select\" in the footer",
+              "attribute": "toSelect"
+            },
+            {
+              "kind": "field",
+              "name": "toNavigate",
+              "type": {
+                "text": "string"
+              },
+              "default": "'to navigate'",
+              "description": "label for \"to navigate\" in the footer",
+              "attribute": "toNavigate"
+            },
+            {
+              "kind": "field",
+              "name": "toClose",
+              "type": {
+                "text": "string"
+              },
+              "default": "'to close'",
+              "description": "label for \"to close\" in the footer",
+              "attribute": "toClose"
+            },
+            {
+              "kind": "field",
               "name": "data",
               "default": "[]",
               "description": "Array of actions",
@@ -516,6 +648,12 @@
             },
             {
               "kind": "field",
+              "name": "_searchTerms",
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
               "name": "_currentRoot",
               "type": {
                 "text": "string | undefined"
@@ -531,7 +669,8 @@
             {
               "kind": "field",
               "name": "breadcrumbs",
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "field",
@@ -569,6 +708,11 @@
             {
               "kind": "method",
               "name": "_registerInternalHotkeys",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_unregisterInternalHotkeys",
               "privacy": "private"
             },
             {
@@ -611,7 +755,8 @@
               "type": {
                 "text": "number"
               },
-              "privacy": "private"
+              "privacy": "private",
+              "readonly": true
             },
             {
               "kind": "method",
@@ -758,6 +903,42 @@
               "default": "false",
               "description": "Show or hide breadcrumbs on header",
               "fieldName": "hotKeysJoinedView"
+            },
+            {
+              "name": "showFooter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "Show or hide the footer",
+              "fieldName": "showFooter"
+            },
+            {
+              "name": "toSelect",
+              "type": {
+                "text": "string"
+              },
+              "default": "'to select'",
+              "description": "label for \"to select\" in the footer",
+              "fieldName": "toSelect"
+            },
+            {
+              "name": "toNavigate",
+              "type": {
+                "text": "string"
+              },
+              "default": "'to navigate'",
+              "description": "label for \"to navigate\" in the footer",
+              "fieldName": "toNavigate"
+            },
+            {
+              "name": "toClose",
+              "type": {
+                "text": "string"
+              },
+              "default": "'to close'",
+              "description": "label for \"to close\" in the footer",
+              "fieldName": "toClose"
             },
             {
               "name": "data",

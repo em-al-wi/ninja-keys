@@ -126,7 +126,7 @@ export class NinjaAction extends LitElement {
   }
 
   override render() {
-    let icon = unsafeHTML(this.action.icon || '');
+    const icon = unsafeHTML(this.action.icon || '');
 
     // const hotkey = this.action.hotkey
     //   ? html`<div class="ninja-hotkey">${this.action.hotkey}</div>`
