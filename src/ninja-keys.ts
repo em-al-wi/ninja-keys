@@ -88,6 +88,9 @@ export class NinjaKeys extends LitElement {
    */
   @property() toClose = 'to close';
 
+  @property({attribute: false})
+  onBeforeOpen?: () => Promise<void>;
+
   /**
    * Array of actions
    */
@@ -109,11 +112,14 @@ export class NinjaKeys extends LitElement {
   /**
    * Show a modal
    */
-  open(options: {parent?: string} = {}) {
+  async open(options: {parent?: string} = {}) {
     if (document) {
       // inform that ninja-keys panel will be opened
       const frameworkLoadedEvent = new Event('ninja-keys-will-open');
       document.dispatchEvent(frameworkLoadedEvent);
+    }
+    if (this.onBeforeOpen) {
+      await this.onBeforeOpen();
     }
 
     this._bump = true;
