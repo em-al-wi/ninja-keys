@@ -110,6 +110,12 @@ export class NinjaKeys extends LitElement {
    * Show a modal
    */
   open(options: {parent?: string} = {}) {
+    if (document) {
+      // inform that ninja-keys panel will be opened
+      const frameworkLoadedEvent = new Event('ninja-keys-will-open');
+      document.dispatchEvent(frameworkLoadedEvent);
+    }
+
     this._bump = true;
     this.visible = true;
     this._headerRef.value!.focusSearch();
