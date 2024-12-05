@@ -89,7 +89,7 @@ export class NinjaKeys extends LitElement {
   @property() toClose = 'to close';
 
   @property({attribute: false})
-  onBeforeOpen?: () => Promise<void>;
+  public onBeforeOpen?: () => Promise<void>;
 
   /**
    * Array of actions
